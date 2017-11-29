@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentPadding="15dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/trip_card"
+        app:cardElevation="10dp"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/dummy_trip_image"
+            android:id="@+id/trip_img"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:textStyle="bold"
+            android:id="@+id/trip_text"
+            android:text="Dummy"
+            android:textColor="#9c26e0"/>
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_gravity="end"
+            app:cardCornerRadius="1dp"
+            android:id="@+id/join"
+            app:cardElevation="1dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JOIN"
+                android:textStyle="bold"
+
+                android:textColor="#6b092b"/>
+        </android.support.v7.widget.CardView>
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

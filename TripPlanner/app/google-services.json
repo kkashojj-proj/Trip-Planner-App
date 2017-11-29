@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "711653714173",
+    "firebase_url": "https://tryps-b990d.firebaseio.com",
+    "project_id": "tryps-b990d",
+    "storage_bucket": "tryps-b990d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711653714173:android:14779188165cb815",
+        "android_client_info": {
+          "package_name": "com.example.koushik.homework9"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711653714173-l4l331sl75mud9ir3vsl78gr4opns5uc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.koushik.homework9",
+            "certificate_hash": "4e1c7518d22e360e51adf7e882049e3b53b640b3"
+          }
+        },
+        {
+          "client_id": "711653714173-j075cojq2c72fujdrpvaiq3qamf5uanj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.koushik.homework9",
+            "certificate_hash": "ead9f0e0f9313ff2f5ae4f161e8738752202320b"
+          }
+        },
+        {
+          "client_id": "711653714173-eu45kq3ut1qq756cpbj49gmqlqpn730m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1BpKEQQKeGo3SAKhW6XZ3Pp67cO02I9U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711653714173-eu45kq3ut1qq756cpbj49gmqlqpn730m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
