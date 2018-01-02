@@ -1,0 +1,47 @@
+Trip planner
+
+------ Registration
+
+User can signup/login in the following ways:
+
+1. Email, Username
+2. Google Authentication
+
+
+- Every user can send request to other user and make friends.
+
+- Friends/Pending requests are shown in a separate section
+
+- Friends can plan trips.
+
+- Every trip has a chat room.
+
+- User can delete messages on his side without affecting the experience for other users in the discussion
+
+- Images can be sent through chat room
+
+- User can add locations to the trip
+
+- All the locations are shown in a map embedded into the map.
+
+- Map shows the round trip from current location of the user covering all the locations added to the trip
+
+
+
+
+-------- 
+
+Used following to complete the app successfully:
+
+Google Maps Api
+Google Authentication 
+Firebase Database
+Firebase Storage
+RecyclerView
+CardView
+Picasso (loading images asynchronously)
+
+
+
+
+
