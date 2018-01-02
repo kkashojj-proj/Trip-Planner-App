@@ -7,6 +7,8 @@ User can signup/login in the following ways:
 1. Email, Username
 2. Google Authentication
 
+------ App Functionalities
+
 
 - Every user can send request to other user and make friends.
 
@@ -29,7 +31,7 @@ User can signup/login in the following ways:
 
 
 
--------- 
+-------- Technologies used
 
 Used following to complete the app successfully:
 
