@@ -18,8 +18,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,9 +40,10 @@ import java.io.InputStream;
 import java.util.UUID;
 
 import static com.example.koushik.homework9.MainActivity.LOGIN;
+import static com.example.koushik.homework9.MainActivity.googleApiClient;
 
 public class UserActivity extends AppCompatActivity
-        implements EditProfileFragment.OnFragmentInteractionListener,CreateTripFragment.OnFragmentInteractionListener,TripsFragment.OnFragmentInteractionListener,ItemTripCallback,NavigationView.OnNavigationItemSelectedListener,
+        implements GoogleApiClient.OnConnectionFailedListener,EditProfileFragment.OnFragmentInteractionListener,CreateTripFragment.OnFragmentInteractionListener,TripsFragment.OnFragmentInteractionListener,ItemTripCallback,NavigationView.OnNavigationItemSelectedListener,
         ItemClickCallback,ItemPeopleClickback,DiscoverFragment.OnFragmentInteractionListener,FriendsFragment.OnFragmentInteractionListener {
 
     public static User user;
@@ -151,6 +158,7 @@ public class UserActivity extends AppCompatActivity
         } else if (id == R.id.logout) {
             editor.putString(MainActivity.EMAIL,null);
             editor.commit();
+            MainActivity.signout();
             finish();
         }
 
@@ -325,5 +333,10 @@ public class UserActivity extends AppCompatActivity
             }
 
         }
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }

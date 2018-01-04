@@ -20,6 +20,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     int flag=0;
     Button btn_signup,btn_login;
     SignInButton signInButton;
-    GoogleApiClient googleApiClient;
+    public static GoogleApiClient googleApiClient;
     TextView tv_email,tv_password;
     EditText et_email,et_password;
     SharedPreferences sharedPreferences;
@@ -90,7 +92,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         });
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(et_email.getText().toString().length()>0&&et_password.getText().toString().length()>0){
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         });
 
 
-        signInButton= (SignInButton) findViewById(R.id.GoogleSignin);
+        signInButton = (SignInButton) findViewById(R.id.GoogleSignin);
         GoogleSignInOptions gso=new GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -137,11 +140,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
 
+
+
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                googleApiClient.clearDefaultAccountAndReconnect();
                 startActivityForResult(intent,GSIGNIN);
+
             }
         });
 
@@ -212,6 +219,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }else{
             Toast.makeText(MainActivity.this,"Invalid credentials",Toast.LENGTH_SHORT).show();
 
+        }
+    }
+
+    public static void signout(){
+        //Auth.GoogleSignInApi.signOut(googleApiClient);
+        if(googleApiClient.isConnected()){
+            Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+                @Override
+                public void onResult(@NonNull Status status) {
+                    if (status.isSuccess()) {
+                        Log.d("Logout", "User Logged out");
+                    }
+                }
+            });
         }
     }
 

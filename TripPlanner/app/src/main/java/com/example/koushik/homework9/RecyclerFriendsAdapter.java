@@ -34,7 +34,6 @@ public class RecyclerFriendsAdapter extends RecyclerView.Adapter<RecyclerFriends
         this.context=context;
         this.itemClickCallback= (ItemClickCallback) context;
         this.layout=layout;
-
     }
 
 

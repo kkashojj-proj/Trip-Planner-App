@@ -40,6 +40,7 @@ public class ChatRoomActivity extends AppCompatActivity implements ItemClickCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
 
+
         //MessageList =  new ArrayList<>();
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
