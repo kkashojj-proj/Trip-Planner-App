@@ -1,16 +1,16 @@
-#Trip planner
+# Trip planner
 
 Please find a video demo of this app at : 
       https://www.youtube.com/watch?v=biFU1RKtGPE&feature=youtu.be
 
-##Registration
+## Registration
 
 User can signup/login in the following ways:
 
 1. Email, Username
 2. Google Authentication
 
-##Functionalities
+## Functionalities
 
 
 * Every user can send request to other user and make friends.
@@ -26,7 +26,7 @@ User can signup/login in the following ways:
 
 
 
-##Technologies used
+## Technologies used
 
 Used following to complete the app successfully:
 
